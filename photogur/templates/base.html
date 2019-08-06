@@ -22,6 +22,16 @@
             </label>
             <input type="submit" value="Search" />
         </form>
+          {% if request.user.is_authenticated %}
+            <!-- display link to log out -->
+            <a href="{% url 'logout' %}"> Logout Here </a>
+        {% else %}
+            <!-- display link to login page -->
+            <a href="{% url 'login' %}"> Login Here </a>
+         {% endif %}
+
+        <a href="{% url 'submit' %}">Submit new Picture</a>
+
     </header>
 <main>
     {% block content %}

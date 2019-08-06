@@ -9,6 +9,7 @@
     <h1>{{ picture.title }}</h1>
     <h2>{{ picture.artist }}</h2>
     <img src="{{ picture.url }}" alt="{{ picture.title }}">
+    <h4>Submitted by {{ picture.user.username }}</h4>
     <ul>
     {% for comment in picture.comments.all %}
         <li>
